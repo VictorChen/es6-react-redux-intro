@@ -1,70 +1,285 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>Intro to ES6, React, Redux</title>
-		<meta charset="utf-8">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+  <head>
+    <title>Intro to ES6, React, Redux</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Custom css -->
+    <link rel="stylesheet" href="css/style.css">
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>Testing</h1>
-					<h3>More Testing</h3>
-					<aside class="notes">
-			    	Press 's' to open notes
-			    </aside>
-				</section>
-			</div>
-		</div>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>JavaScript</h1>
+          <h3>ES6, React, Redux</h3>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
 
-		<script>
+        <section>
+          <h1>ES6</h1>
+          <h3>ECMAScript 6</h3>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
 
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        <section>
+          <h2>Block Scope</h2>
+          <div class="column fragment" style="width: 49%;">
+            ES5:
+            <pre><code data-trim data-noescape>
+              function bar(foo) {
+                if (foo) {
+                  var test = "hello world";
+                }
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+                // "hello world"
+                console.log(test);
+              }
+            </code></pre>
+          </div>
+          <div class="column fragment" style="width: 49%;">
+            ES6:
+            <pre><code data-trim data-noescape>
+              function bar(foo) {
+                if (foo) {
+                  let test = "hello world";
+                }
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+                // throws exception
+                console.log(test);
+              }
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
 
-		</script>
+        <section>
+          <h2>Const</h2>
+          <pre><code data-trim data-noescape>
+            function bar(foo) {
+              const test = "hello world";
 
-	</body>
+              if (foo) {
+                // Uncaught TypeError: Assignment to constant variable.
+                test = "hi world";
+              }
+            }
+          </code></pre>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>Arrow Functions</h2>
+          <div>
+            <div>ES5:</div>
+            <pre><code data-trim data-noescape>
+              numbers.map(function(number) {
+                return number * 2;
+              });
+            </code></pre>
+          </div>
+          <div>
+            ES6:
+            <pre><code data-trim data-noescape>
+              numbers.map(number => number * 2);
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>Template Strings</h2>
+          <div>
+            <div>ES5:</div>
+            <pre><code data-trim>
+              function getHTML(className) {
+                return '<div class="' + className + '">Hello World</div>';
+              }
+            </code></pre>
+          </div>
+          <div>
+            ES6:
+            <pre><code data-trim>
+              function getHTML(className) {
+                return `<div class="${className}">Hello World</div>`;
+              }
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>Spread Operator</h2>
+          <div>
+            <div>ES5:</div>
+            <pre><code data-trim>
+              var initial = [0, 1];
+              var numbers = initial.concat([2, 3]);
+
+              // [0, 1, 2, 3]
+              console.log(numbers);
+            </code></pre>
+          </div>
+          <div>
+            ES6:
+            <pre><code data-trim>
+              const initial = [0, 1];
+              const numbers = [...initial, 2, 3];
+
+              // [0, 1, 2, 3]
+              console.log(numbers);
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>Destructuring</h2>
+          <div>
+            <pre><code data-trim>
+              function getObject() {
+                return {
+                  a: 'foo',
+                  b: 'bar',
+                  c: 'hello'
+                };
+              }
+            </code></pre>
+          </div>
+          <div>
+            <div>ES5:</div>
+            <pre><code data-trim>
+              var myObject = getObject();
+              var a = myObject.a;
+              var b = myObject.b;
+              var c = myObject.c;
+
+              // foo bar hello
+              console.log(a + ' ' + b + ' ' + c)
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>Destructuring</h2>
+          <div>
+            <pre><code data-trim>
+              function getObject() {
+                return {
+                  a: 'foo',
+                  b: 'bar',
+                  c: 'hello'
+                };
+              }
+            </code></pre>
+          </div>
+          <div>
+            <div>ES6:</div>
+            <pre><code data-trim>
+              const { a, b, c} = getObject();
+
+              // foo bar hello
+              console.log(`${a} ${b} ${c}`);
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>But wait...there's more!</h2>
+          <ul>
+            <li>Default params</li>
+            <li>Property shorthand</li>
+            <li>Computed property names</li>
+            <li>Array matching</li>
+            <li>Import/export modules</li>
+            <li>Classes</li>
+            <li>Symbols</li>
+            <li>Promises</li>
+            <li>... and more!</li>
+          </ul>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h1>React</h1>
+          <h3>"React is a declarative, efficient, and flexible JavaScript library for building user interfaces"</h3>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>

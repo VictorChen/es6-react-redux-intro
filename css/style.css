@@ -1,0 +1,17 @@
+.reveal div.column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+section {
+    &[data-transition*="none-out"] {
+        &.present, &.past {
+            transition-duration: 0s !important;
+        }
+    }
+    &[data-transition*="none-in"] {
+  &.future, &.present {
+      transition-duration: 0s !important;
+  }
+    }
+}
