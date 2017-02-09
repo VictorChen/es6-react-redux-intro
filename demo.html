@@ -31,15 +31,19 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-transition="zoom">
+        <section data-transition="zoom" data-background="#f2ab4f">
           <h1>JavaScript</h1>
-          <h3>ES6, React, Redux</h3>
+          <h3>
+            <span style="color: #3d4d7c">ES6</span>,
+            <span style="color: #2a4922">React</span>,
+            <span style="color: #572087">Redux</span>
+          </h3>
           <aside class="notes">
             Press 's' to open notes
           </aside>
         </section>
 
-        <section data-transition="zoom">
+        <section data-transition="zoom" data-background="#3d4d7c">
           <h1>ES6</h1>
           <h3>ECMAScript 6</h3>
           <aside class="notes">
@@ -47,7 +51,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h2>Block Scope</h2>
           <div class="column fragment" style="width: 49%;">
             ES5:
@@ -80,7 +84,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h2>Const</h2>
           <pre><code class="language-javascript">
             function bar(foo) {
@@ -97,7 +101,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h2>Arrow Functions</h2>
           <div class="fragment">
             <div>ES5:</div>
@@ -118,7 +122,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h2>Arrow Functions</h2>
           <div>
             <div>ES5:</div>
@@ -139,7 +143,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h2>Template Strings</h2>
           <div>
             <div>ES5:</div>
@@ -162,7 +166,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h2>Spread Operator</h2>
           <div class="fragment">
             <div>ES5:</div>
@@ -189,7 +193,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h2>Destructuring</h2>
           <div class="fragment">
             <pre><code class="language-javascript">
@@ -219,7 +223,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h2>Destructuring</h2>
           <div class="fragment">
             <pre><code class="language-javascript">
@@ -246,7 +250,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#3d4d7c">
           <h3>But wait...there's more!</h3>
           <ul>
             <li>Default params</li>
@@ -264,17 +268,17 @@
           </aside>
         </section>
 
-        <section data-transition="zoom">
+        <section data-transition="zoom" data-background="#2a4922">
           <h1>React</h1>
-          <blockquote cite="https://facebook.github.io/react/tutorial/tutorial.html#what-is-react">
-            "React is a declarative, efficient, and flexible JavaScript library for building user interfaces." - Facebook
+          <blockquote class="fragment" cite="https://facebook.github.io/react/tutorial/tutorial.html#what-is-react">
+            React is a declarative, efficient, and flexible JavaScript library for building user interfaces
           </blockquote>
           <aside class="notes">
             "React is a library that allows you to extend HTML elements." -- Victor Chen
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
           <h2>HTML Input</h2>
           <div class="fragment">
             <pre><code class="language-html">
@@ -289,7 +293,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
           <h2>Custom Input?</h2>
           <div class="fragment">
             <div style="position: relative; width: 400px; display: inline-block;">
@@ -298,7 +302,7 @@
             </div>
             <script>
               $(function() {
-                $('.customInput').on('keydown', function() {
+                $('.customInput').on('keyup', function() {
                   $(this).siblings('.customInputCount').text($(this).val().length);
                 });
               });
@@ -314,7 +318,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
           <h2>React Component</h2>
           <div class="fragment">
             <pre><code class="language-javascript">
@@ -337,7 +341,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
           <h2>React Component</h2>
           <div>
             <pre><code class="language-javascript">
@@ -363,7 +367,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
           <h2>React Component</h2>
           <div>
             <pre><code class="language-javascript">
@@ -389,7 +393,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
           <h2>React Component</h2>
           <div>
             <pre><code class="language-javascript">
@@ -405,7 +409,7 @@
                   return (
                     &lt;input
                       placeholder=&quot;Enter your name&quot;
-                      onkeydown={this.handleKey}
+                      onkeyup={this.handleKey}
                     /&gt;
                   );
                 }
@@ -417,7 +421,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
           <h2>React Component</h2>
           <div>
             <pre><code class="language-javascript">
@@ -433,7 +437,7 @@
                   return (
                     &lt;input
                       placeholder=&quot;Enter your name&quot;
-                      onkeydown={this.handleKey}
+                      onkeyup={this.handleKey}
                     /&gt;
                   );
                 }
@@ -445,7 +449,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
           <h2>React Component</h2>
           <div>
             <pre><code class="language-javascript">
@@ -454,7 +458,7 @@
                   &lt;div&gt;
                     &lt;input
                       placeholder=&quot;Enter your name&quot;
-                      onkeydown={this.handleKey}
+                      onkeyup={this.handleKey}
                     /&gt;
                     &lt;span&gt;{this.state.count}&lt;/span&gt;
                   &lt;/div&gt;
@@ -467,32 +471,117 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="#2a4922">
+          <h2>React Component</h2>
+          <div>
+            <div style="position: relative; width: 400px; display: inline-block;">
+              <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+              <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
+            </div>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section data-background="#2a4922">
+          <h2>React Component</h2>
+          <div>
+            <pre><code class="language-javascript">
+              render() {
+                return (
+                  &lt;div&gt;
+                    &lt;input
+                      placeholder=&quot;Enter your name&quot;
+                      onkeyup={this.handleKey}
+                    /&gt;
+                    &lt;span&gt;{this.state.count}&lt;/span&gt;
+                  &lt;/div&gt;
+                );
+              }
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section data-background="#2a4922">
+          <h2>React Component</h2>
+          <div>
+            <pre><code class="language-javascript">
+              render() {
+                return (
+                  &lt;div&gt;
+                    &lt;input
+                      placeholder={this.props.defaultText}
+                      onkeyup={this.handleKey}
+                    /&gt;
+                    &lt;span&gt;{this.state.count}&lt;/span&gt;
+                  &lt;/div&gt;
+                );
+              }
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section data-background="#2a4922">
+          <h2>React Component</h2>
+          <div class="fragment">
+            <pre><code class="language-html">
+              &lt;InputCount defaultText=&quot;Enter your phone number&quot; /&gt;
+            </code></pre>
+          </div>
+          <div class="fragment">
+            <div style="position: relative; width: 400px; display: inline-block;">
+              <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your phone number" />
+              <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
+            </div>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section data-background="#2a4922">
           <h2>Reusable Component</h2>
           <div>
-            <div>
+            <div class="fragment">
               <div style="position: relative; width: 400px; display: inline-block;">
                 <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
                 <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
               </div>
             </div>
 
-            <div>
+            <div class="fragment">
               <div style="position: relative; width: 400px; display: inline-block;">
-                <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+                <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your phone number" />
                 <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
               </div>
             </div>
 
-            <div>
+            <div class="fragment">
               <div style="position: relative; width: 400px; display: inline-block;">
-                <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+                <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your Address" />
                 <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
               </div>
             </div>
           </div>
           <aside class="notes">
             Press 's' to open notes
+          </aside>
+        </section>
+
+        <section data-transition="zoom" data-background="#572087">
+          <h1>Redux</h1>
+          <blockquote cite="http://redux.js.org/">
+            Redux is a predictable state container for JavaScript apps
+          </blockquote>
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
           </aside>
         </section>
       </div>
@@ -514,8 +603,8 @@
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markup/marked.js', condition: function() { return !!document.querySelector( '[data-markup]' ); } },
+          { src: 'plugin/markup/markup.js', condition: function() { return !!document.querySelector( '[data-markup]' ); } },
           { src: 'js/prism.js', async: true },
           { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true }
