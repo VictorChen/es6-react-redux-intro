@@ -15,3 +15,7 @@ section {
   }
     }
 }
+
+.token.operator {
+  background-color: transparent;
+}

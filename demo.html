@@ -6,14 +6,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
-
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-
+    <link rel="stylesheet" href="css/theme/blood.css" id="theme">
     <!-- Custom css -->
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.1.1.min.js"></script>
 
     <!-- Printing and PDF exports -->
     <script>
@@ -32,7 +31,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
+        <section data-transition="zoom">
           <h1>JavaScript</h1>
           <h3>ES6, React, Redux</h3>
           <aside class="notes">
@@ -40,7 +39,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="zoom">
           <h1>ES6</h1>
           <h3>ECMAScript 6</h3>
           <aside class="notes">
@@ -52,7 +51,7 @@
           <h2>Block Scope</h2>
           <div class="column fragment" style="width: 49%;">
             ES5:
-            <pre><code data-trim data-noescape>
+            <pre><code class="language-javascript">
               function bar(foo) {
                 if (foo) {
                   var test = "hello world";
@@ -65,7 +64,7 @@
           </div>
           <div class="column fragment" style="width: 49%;">
             ES6:
-            <pre><code data-trim data-noescape>
+            <pre><code class="language-javascript">
               function bar(foo) {
                 if (foo) {
                   let test = "hello world";
@@ -83,7 +82,7 @@
 
         <section>
           <h2>Const</h2>
-          <pre><code data-trim data-noescape>
+          <pre><code class="language-javascript">
             function bar(foo) {
               const test = "hello world";
 
@@ -100,22 +99,43 @@
 
         <section>
           <h2>Arrow Functions</h2>
-          <div>
+          <div class="fragment">
             <div>ES5:</div>
-            <pre><code data-trim data-noescape>
+            <pre><code class="language-javascript">
               numbers.map(function(number) {
                 return number * 2;
               });
             </code></pre>
           </div>
-          <div>
+          <div class="fragment">
             ES6:
-            <pre><code data-trim data-noescape>
+            <pre><code class="language-javascript">
               numbers.map(number => number * 2);
             </code></pre>
           </div>
           <aside class="notes">
-            Press 's' to open notes
+            Also talk about how arrow functions have an implicit bind!
+          </aside>
+        </section>
+
+        <section>
+          <h2>Arrow Functions</h2>
+          <div>
+            <div>ES5:</div>
+            <pre><code class="language-javascript">
+              numbers.map(function(number) {
+                return number * 2;
+              }.bind(this));
+            </code></pre>
+          </div>
+          <div>
+            ES6:
+            <pre><code class="language-javascript">
+              numbers.map(number => number * 2);
+            </code></pre>
+          </div>
+          <aside class="notes">
+            done.
           </aside>
         </section>
 
@@ -123,17 +143,17 @@
           <h2>Template Strings</h2>
           <div>
             <div>ES5:</div>
-            <pre><code data-trim>
+            <pre><code class="language-javascript">
               function getHTML(className) {
-                return '<div class="' + className + '">Hello World</div>';
+                return '&lt;div class=&quot;' + className + '&quot;&gt;Hello World&lt;/div&gt;';
               }
             </code></pre>
           </div>
           <div>
             ES6:
-            <pre><code data-trim>
+            <pre><code class="language-javascript">
               function getHTML(className) {
-                return `<div class="${className}">Hello World</div>`;
+                return `&lt;div class=&quot;${className}&quot;&gt;Hello World&lt;/div&gt;`;
               }
             </code></pre>
           </div>
@@ -144,9 +164,9 @@
 
         <section>
           <h2>Spread Operator</h2>
-          <div>
+          <div class="fragment">
             <div>ES5:</div>
-            <pre><code data-trim>
+            <pre><code class="language-javascript">
               var initial = [0, 1];
               var numbers = initial.concat([2, 3]);
 
@@ -154,9 +174,9 @@
               console.log(numbers);
             </code></pre>
           </div>
-          <div>
+          <div class="fragment">
             ES6:
-            <pre><code data-trim>
+            <pre><code class="language-javascript">
               const initial = [0, 1];
               const numbers = [...initial, 2, 3];
 
@@ -171,8 +191,8 @@
 
         <section>
           <h2>Destructuring</h2>
-          <div>
-            <pre><code data-trim>
+          <div class="fragment">
+            <pre><code class="language-javascript">
               function getObject() {
                 return {
                   a: 'foo',
@@ -182,9 +202,9 @@
               }
             </code></pre>
           </div>
-          <div>
+          <div class="fragment">
             <div>ES5:</div>
-            <pre><code data-trim>
+            <pre><code class="language-javascript">
               var myObject = getObject();
               var a = myObject.a;
               var b = myObject.b;
@@ -201,8 +221,8 @@
 
         <section>
           <h2>Destructuring</h2>
-          <div>
-            <pre><code data-trim>
+          <div class="fragment">
+            <pre><code class="language-javascript">
               function getObject() {
                 return {
                   a: 'foo',
@@ -212,9 +232,9 @@
               }
             </code></pre>
           </div>
-          <div>
+          <div class="fragment">
             <div>ES6:</div>
-            <pre><code data-trim>
+            <pre><code class="language-javascript">
               const { a, b, c} = getObject();
 
               // foo bar hello
@@ -227,7 +247,7 @@
         </section>
 
         <section>
-          <h2>But wait...there's more!</h2>
+          <h3>But wait...there's more!</h3>
           <ul>
             <li>Default params</li>
             <li>Property shorthand</li>
@@ -244,9 +264,233 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="zoom">
           <h1>React</h1>
-          <h3>"React is a declarative, efficient, and flexible JavaScript library for building user interfaces"</h3>
+          <blockquote cite="https://facebook.github.io/react/tutorial/tutorial.html#what-is-react">
+            "React is a declarative, efficient, and flexible JavaScript library for building user interfaces." - Facebook
+          </blockquote>
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
+          </aside>
+        </section>
+
+        <section>
+          <h2>HTML Input</h2>
+          <div class="fragment">
+            <pre><code class="language-html">
+              &lt;input placeholder=&quot;Enter your name&quot; /&gt;
+            </code></pre>
+          </div>
+          <div class="fragment">
+            <input style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>Custom Input?</h2>
+          <div class="fragment">
+            <div style="position: relative; width: 400px; display: inline-block;">
+              <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+              <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
+            </div>
+            <script>
+              $(function() {
+                $('.customInput').on('keydown', function() {
+                  $(this).siblings('.customInputCount').text($(this).val().length);
+                });
+              });
+            </script>
+          </div>
+          <div class="fragment">
+            <pre><code class="language-html">
+              &lt;inputCount placeholder=&quot;Enter your name&quot; /&gt;
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Component</h2>
+          <div class="fragment">
+            <pre><code class="language-javascript">
+              class InputCount extends React.Component {
+                render() {
+                  return (
+                    &lt;input
+                      placeholder=&quot;Enter your name&quot;
+                    /&gt;
+                  );
+                }
+              }
+            </code></pre>
+          </div>
+          <div class="fragment">
+            <input style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Component</h2>
+          <div>
+            <pre><code class="language-javascript">
+              class InputCount extends React.Component {
+                constructor() {
+
+                }
+                render() {
+                  return (
+                    &lt;input
+                      placeholder=&quot;Enter your name&quot;
+                    /&gt;
+                  );
+                }
+              }
+            </code></pre>
+          </div>
+          <div>
+            <input style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Component</h2>
+          <div>
+            <pre><code class="language-javascript">
+              class InputCount extends React.Component {
+                constructor() {
+                  this.state = { count: 0 };
+                }
+                render() {
+                  return (
+                    &lt;input
+                      placeholder=&quot;Enter your name&quot;
+                    /&gt;
+                  );
+                }
+              }
+            </code></pre>
+          </div>
+          <div>
+            <input style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Component</h2>
+          <div>
+            <pre><code class="language-javascript">
+              class InputCount extends React.Component {
+                constructor() {
+                  this.state = { count: 0 };
+                  this.handleKey = this.handleKey.bind(this);
+                }
+                handleKey(event) {
+
+                }
+                render() {
+                  return (
+                    &lt;input
+                      placeholder=&quot;Enter your name&quot;
+                      onkeydown={this.handleKey}
+                    /&gt;
+                  );
+                }
+              }
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Component</h2>
+          <div>
+            <pre><code class="language-javascript">
+              class InputCount extends React.Component {
+                constructor() {
+                  this.state = { count: 0 };
+                  this.handleKey = this.handleKey.bind(this);
+                }
+                handleKey(event) {
+                  this.setState({ count: event.target.value.length });
+                }
+                render() {
+                  return (
+                    &lt;input
+                      placeholder=&quot;Enter your name&quot;
+                      onkeydown={this.handleKey}
+                    /&gt;
+                  );
+                }
+              }
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Component</h2>
+          <div>
+            <pre><code class="language-javascript">
+              render() {
+                return (
+                  &lt;div&gt;
+                    &lt;input
+                      placeholder=&quot;Enter your name&quot;
+                      onkeydown={this.handleKey}
+                    /&gt;
+                    &lt;span&gt;{this.state.count}&lt;/span&gt;
+                  &lt;/div&gt;
+                );
+              }
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section>
+          <h2>Reusable Component</h2>
+          <div>
+            <div>
+              <div style="position: relative; width: 400px; display: inline-block;">
+                <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+                <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
+              </div>
+            </div>
+
+            <div>
+              <div style="position: relative; width: 400px; display: inline-block;">
+                <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+                <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
+              </div>
+            </div>
+
+            <div>
+              <div style="position: relative; width: 400px; display: inline-block;">
+                <input class="customInput" style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
+                <span style="position: absolute; top: 16px; right: -8px; font-size: 24px; color: black;" class="customInputCount">0</span>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Press 's' to open notes
           </aside>
@@ -256,7 +500,6 @@
 
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
-
     <script>
 
       // More info https://github.com/hakimel/reveal.js#configuration
@@ -273,7 +516,7 @@
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'js/prism.js', async: true },
           { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true }
         ]
