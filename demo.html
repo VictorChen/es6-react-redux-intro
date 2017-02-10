@@ -584,6 +584,124 @@
             "React is a library that allows you to extend HTML elements." -- Victor Chen
           </aside>
         </section>
+
+        <section data-background="img/redux1.png" data-background-color="#572087" data-background-size="800px">
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
+          </aside>
+        </section>
+
+        <section data-background="img/redux2.png" data-background-color="#572087" data-background-size="800px">
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
+          </aside>
+        </section>
+
+        <section data-background="img/redux3.png" data-background-color="#572087" data-background-size="800px">
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
+          </aside>
+        </section>
+
+        <section data-background="img/redux4.png" data-background-color="#572087" data-background-size="800px">
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
+          </aside>
+        </section>
+
+        <section data-background="img/redux5.png" data-background-color="#572087" data-background-size="800px">
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
+          </aside>
+        </section>
+
+        <section data-background="img/redux6.png" data-background-color="#572087" data-background-size="800px">
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
+          </aside>
+        </section>
+
+        <section data-background="img/redux7.png" data-background-color="#572087" data-background-size="800px">
+          <aside class="notes">
+            "React is a library that allows you to extend HTML elements." -- Victor Chen
+          </aside>
+        </section>
+
+        <section data-background="#572087">
+          <h2>Dispatch Action</h2>
+          <div class="fragment">
+            <select class="colorSelect" style="width: 400px; font-size: 30px;">
+              <option value="#a91c1c">Red</option>
+              <option value="#1e2ac0">Blue</option>
+              <option value="#b8be63">Yellow</option>
+            </select>
+          </div>
+          <div class="fragment">
+            <pre><code class="language-javascript">
+              function selectColor(color) {
+                return {
+                  type: "SELECT_COLOR",
+                  color: color
+                };
+              }
+            </code></pre>
+          </div>
+          <div class="fragment">
+            <pre><code class="language-javascript">
+              this.props.dispatch(selectColor(color));
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section data-background="#572087">
+          <h2>Reducer</h2>
+          <div class="fragment">
+            <pre><code class="language-javascript">
+              function colorReducer(state, action) {
+                switch (action.type) {
+                  case "SELECT_COLOR":
+                    return Object.assign({}, state, {
+                      color: action.color
+                    });
+                  default:
+                    return state;
+                }
+              }
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
+
+        <section data-background="#572087">
+          <h2>Redux Example</h2>
+          <div class="fragment">
+            <select class="colorSelect" style="width: 400px; font-size: 30px;">
+              <option value="#a91c1c">Red</option>
+              <option value="#1e2ac0">Blue</option>
+              <option value="#b8be63">Yellow</option>
+            </select>
+          </div>
+          <div class="fragment">
+            <div>
+              <div class="colorBox" style="display: inline-block; width: 250px; height: 250px; line-height: 250px; background-color: #a91c1c; margin: 30px;">Component 1</div>
+              <div style="display: inline-block; width: 250px; height: 250px; line-height: 250px; background-color: #a91c1c; margin: 30px;">Component 2</div>
+              <div class="colorBox" style="display: inline-block; width: 250px; height: 250px; line-height: 250px; background-color: #a91c1c; margin: 30px;">Component 3</div>
+            </div>
+            <script>
+              $('.colorSelect').change((event) => {
+                $('.colorBox').css('background-color', $(event.target).val());
+              });
+            </script>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
       </div>
     </div>
 
