@@ -8,24 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/blood.css" id="theme">
-    <!-- Custom css -->
+    <link rel="stylesheet" href="css/blood.css" id="theme">
     <link rel="stylesheet" href="css/style.css">
-
     <script src="js/jquery-3.1.1.min.js"></script>
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -630,7 +615,7 @@
         <section data-background="#572087">
           <h2>Dispatch Action</h2>
           <div class="fragment">
-            <select class="colorSelect" style="width: 400px; font-size: 30px;">
+            <select style="width: 400px; font-size: 30px;">
               <option value="#a91c1c">Red</option>
               <option value="#1e2ac0">Blue</option>
               <option value="#b8be63">Yellow</option>
@@ -702,34 +687,40 @@
             Press 's' to open notes
           </aside>
         </section>
+
+        <section data-background="#f2ab4f">
+          <h2>Getting Started</h2>
+          <h4 class="fragment">Extremely easy to set up</h4>
+          <div class="fragment">
+            <pre><code class="language-javascript">
+              npm install -g create-react-app
+
+              create-react-app my-app
+              cd my-app/
+              npm start
+            </code></pre>
+          </div>
+          <aside class="notes">
+            Press 's' to open notes
+          </aside>
+        </section>
       </div>
     </div>
 
-    <script src="lib/js/head.min.js"></script>
+    <script src="js/head.min.js"></script>
     <script src="js/reveal.js"></script>
     <script>
-
-      // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         controls: true,
         progress: true,
         history: true,
         center: true,
-
-        transition: 'none', // none/fade/slide/convex/concave/zoom
-
-        // More info https://github.com/hakimel/reveal.js#dependencies
+        transition: 'none',
         dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markup/marked.js', condition: function() { return !!document.querySelector( '[data-markup]' ); } },
-          { src: 'plugin/markup/markup.js', condition: function() { return !!document.querySelector( '[data-markup]' ); } },
           { src: 'js/prism.js', async: true },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true }
         ]
       });
-
     </script>
-
   </body>
 </html>
