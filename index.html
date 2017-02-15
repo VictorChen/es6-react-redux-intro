@@ -40,15 +40,7 @@
           <h1>ES6</h1>
           <h3>ECMAScript 6</h3>
           <aside class="notes">
-            ES6 is the latest standard for javascript and it comes with a lot of new features which I'm really excited about.
-          </aside>
-        </section>
-
-        <section data-background-color="#3d4d7c">
-          <h3>Refactoring code like...</h3>
-          <img src="img/es6.gif" width="800" height="400" />
-          <aside class="notes">
-            It makes javascript a lot less shitty. I'm going to go over a few of the new features that I personally enjoy.
+            ES6 is the latest standard for javascript and it comes with a lot of new features which I'm really excited about. I'm going to go over some of them.
           </aside>
         </section>
 
@@ -196,7 +188,7 @@
             </code></pre>
           </div>
           <aside class="notes">
-            Spread operator. So, if you need to for example add
+            In javascript, we have the math.max function which takes in numbers as arguments (as many as you like) and it will return the biggest number out of them. But, a lot of times we work with array of numbers, so in order to use this function, we'd have to do something like...
           </aside>
         </section>
 
@@ -248,13 +240,30 @@
           </aside>
         </section>
 
+        <section data-background-color="#3d4d7c">
+          <h3>Refactoring code like...</h3>
+          <div style="position: relative;">
+            <img style="display: inline-block;" src="img/es6.gif" width="600" height="400" />
+            <img style="display: inline-block;" src="img/coding.gif" width="200" height="400" />
+          </div>
+          <aside class="notes">
+            With all these new features, we can write a lot less code and it's more enjoyable. Which you can clearly see from this guy.
+          </aside>
+        </section>
+
         <section data-transition="zoom" data-background="#2a4922">
           <h1>React</h1>
           <blockquote class="fragment" cite="https://facebook.github.io/react/tutorial/tutorial.html#what-is-react">
             React is a declarative, efficient, and flexible JavaScript library for building user interfaces
           </blockquote>
           <aside class="notes">
-            Next up is react, react is a very popular framework for building web applications.
+            Next up is react, react is yet ANOTHER framework for building web applications.
+          </aside>
+        </section>
+
+        <section data-background="img/new-framework.jpg" data-background-color="#2a4922" data-background-size="600px">
+          <aside class="notes">
+            It used to be jquery, backbone, angular, and now react.
           </aside>
         </section>
 
@@ -320,7 +329,7 @@
             <input style="padding: 10px; border: 3px solid black; width: 400px; border-radius: 5px; font-size: 20px;" placeholder="Enter your name" />
           </div>
           <aside class="notes">
-            In order to create a new component, you'd create a class that extends react component. Note that class here is actually another es6 feature. Every react component has a render function, this tells it what to actually render when you create the component. In this example, it just renders an input that doesn't do anything.
+            In order to create a new component, you'd create a class that extends react component. Note that class here is actually another es6 feature. Every react component has a render function, this tells it what to actually render when you create the component. In this example, it just renders an input that doesn't do anything. The syntax inside the render is actually JSX, an extension to js which is just syntactic sugar to make your code look like HTML. You don't have to use JSX, but it makes your code look cleaner. It compiles it down to js.
           </aside>
         </section>
 
@@ -559,6 +568,12 @@
           </div>
           <aside class="notes">
             Just like that, we created our own react component that is re-usable! We can create as many as we want and each one is independent of the others. That is basically what react allows us to do.
+          </aside>
+        </section>
+
+        <section data-background="img/styled-components.jpg" data-background-color="#2a4922" data-background-size="600px">
+          <aside class="notes">
+            Components are easily sharable, if you need a component, chances are it exists somewhere.
           </aside>
         </section>
 
