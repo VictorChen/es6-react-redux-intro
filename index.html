@@ -666,7 +666,7 @@
             </code></pre>
           </div>
           <aside class="notes">
-            A reducer is simply a function that takes in the state and the action and returns a new state. There could be multiple reducers in an app and each reducer should handle specific types of actions. In this example, the reducer is very simple, it only handles the color change action. And all it does is it updates the state with the color from the action.
+            A reducer is simply a function that takes in the state and the action and returns a new state. There could be multiple reducers in an app and each reducer should handle specific types of actions. In this example, the reducer is very simple, it only handles the color change action. And all it does is it updates the state with the color from the action. It's important to make sure that the reducer has no side effects. It should be a pure function.
           </aside>
         </section>
 
@@ -704,7 +704,7 @@
             <li class="fragment">Changes are made with pure functions</li>
           </ul>
           <aside class="notes">
-            Entire state of the application is stored in redux. Because the state is read only and the only way to modify it is to emit an action, it is very clear to see how the app got into a particular state by looking at the list of actions dispatched. Because reducers are pure functions, it makes everything deterministic, it makes it easier to debug your application or write unit tests.
+            Entire state of the application is stored in redux. Because the state is read only and the only way to modify it is to emit an action, it is very clear to see how the app got into a particular state by looking at the list of actions dispatched. Because reducers are pure functions, it makes everything deterministic, it makes it easier to debug your application or write unit tests. And, it makes it easy to do things like undo/redo because you'll always get the same result.
           </aside>
         </section>
 
@@ -726,7 +726,7 @@
             </code></pre>
           </div>
           <aside class="notes">
-            Setting up es6, react and redux is very easy, thanks to the create-react-app tool by facebook.
+            Setting up es6, react and redux is very easy, thanks to the create-react-app tool by facebook. The nice thing about this is that you can run npm run build, which will bundle up your code in production mode and optimize them (eg: minify code with hashes in filename for caching).
           </aside>
         </section>
       </div>
